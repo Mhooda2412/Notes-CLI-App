@@ -1,4 +1,5 @@
 const yargs = require('yargs')
+const notes = require('./notes.js')
 
 /*
     creating custom CLI using yargs for:--
@@ -27,10 +28,7 @@ yargs.command({
         }
     },
     handler:(argv)=>{
-        /*
-            TODO:- Implement addNote(title,body) 
-        */
-        console.log("adding notes ....")
+        notes.addNote(argv.title,argv.body)
     }
 })
 
@@ -48,10 +46,7 @@ yargs.command({
         }
     },
     handler:(argv)=>{
-        /*
-            TODO:- Implement delNote(title) 
-        */
-        console.log("deleting notes ....")
+       notes.delNote(argv.title)
     }
 })
 
@@ -61,10 +56,7 @@ yargs.command({
     command:'list',
     describe:'List all notes',
     handler:()=>{
-        /*
-            TODO:- Implement listNotes() 
-        */
-        console.log("listing notes ....")
+       notes.listNotes()
     }
 })
 
@@ -81,10 +73,7 @@ yargs.command({
         }
     },
     handler:(argv)=>{
-        /*
-            TODO:- Implement readNote(title) 
-        */
-        console.log("reading notes ....")
+        notes.readNote(argv.title)
     }
 })
 
